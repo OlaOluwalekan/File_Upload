@@ -15,9 +15,10 @@ let imageValue
 
 imageInputDOM.addEventListener('change', async (e) => {
   const imageFile = e.target.files[0]
-  console.log(imageFile)
   const formData = new FormData()
+  console.log(formData)
   formData.append('image', imageFile)
+  console.log(formData)
   try {
     const {
       data: {

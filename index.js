@@ -4,6 +4,7 @@ require('express-async-errors')
 const express = require('express')
 const app = express()
 const fileUpload = require('express-fileupload')
+const cors = require('cors')
 
 // connect to db
 const connect = require('./db/connect')
@@ -15,6 +16,7 @@ const productRouter = require('./route/productRoutes')
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 
+app.use(cors())
 app.use(express.static('./public'))
 app.use(express.json())
 app.use(fileUpload({ useTempFiles: true }))
